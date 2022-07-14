@@ -17,7 +17,7 @@
                 <div class="conatiner__left__text1">Розрахувати щомісячний платіж?🧐</div>
                 <div class="conatiner__left__block1">
                     <div class="conatiner__left__block1__text">Вік дитини</div>
-                <div class="conatiner__left__block1__text2" id="conatiner__left__block1__text2__count">2</div>
+                <div class="conatiner__left__block1__text2" id="conatiner__left__block1__text2__count">4</div>
                 <input class="conatiner__left__block1__inp" id="conatiner__left__block1__inp" value="4" type="range" min="2" max="6">
                 </div>
                 <div class="conatiner__left__block2">
@@ -53,7 +53,7 @@
             
             <div class="conatiner__right">
                 <div class="conatiner__right__text1">Загальні витрати💸</div>
-                <div class="conatiner__right__money" id="conatiner__right__money">7600$</div>
+                <div class="conatiner__right__money" id="conatiner__right__money">7500$</div>
                 <div class="conatiner__right__box">
                     <div class="conatiner__right__box__text1">Вартість абонемента</div>
                     <div class="conatiner__right__box__text2">24323$</div>
@@ -102,9 +102,9 @@
         let ch2=0
         let ch3=0
         let pr=7500
-        let pr1=2300
-        let pr2=0
-        let pr3=64
+        let pr1=2300+3000
+        let pr2=0+2200
+        let pr3=0
         // 7436 8636 6336
         conatiner__left__block1__inp.oninput = function(){
             conatiner__left__block1__text2__count.innerText =conatiner__left__block1__inp.value
@@ -166,16 +166,16 @@
         $('.conatiner__left__block2__text__opt1').click(function(){
             conatiner__left__block2__text2_1.innerText='Повний день'
             ch1--;
-            pr1=2300
-            pr=6336+pr1+pr2+pr3
+            pr1=2300+3000
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_1.style.display = 'none'
         })
         $('.conatiner__left__block2__text__opt2').click(function(){
             conatiner__left__block2__text2_1.innerText='Неповний день'
             ch1--;
-            pr1=0
-            pr=6336+pr1+pr2+pr3
+            pr1=3000
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_1.style.display = 'none'
         })
@@ -183,8 +183,8 @@
             conatiner__left__block2__text2_2.innerText='2-разове(сніданок-обід)'
             console.log('ds')
             ch2--;
-            pr2=0
-            pr=6336+pr1+pr2+pr3
+            pr2=0+2200
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_2.style.display = 'none'
         })
@@ -192,8 +192,8 @@
             console.log('sd')
             conatiner__left__block2__text2_2.innerText='4-разове(сніданок, обід, перекус, вечеря)'
             ch2--;
-            pr2=1200
-            pr=6336+pr1+pr2+pr3
+            pr2=1200+2200
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_2.style.display = 'none'
         })
@@ -201,7 +201,7 @@
             conatiner__left__block2__text2_3.innerText='Оплата за реквізитами щомісячна'
             ch3--;
             pr3=0
-            pr=6336+pr1+pr2+pr3
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_3.style.display = 'none'
             console.log('ds')
@@ -210,8 +210,8 @@
             console.log('sd')
             conatiner__left__block2__text2_3.innerText='Автоматичне списання з карти щомісяця'
             ch3--;
-            pr3=64
-            pr=6336+pr1+pr2+pr3
+            pr3=-64
+            pr=pr1+pr2+pr3
             conatiner__right__money.innerText =pr+'$'
                 conatiner__left__block2__ch2__select_3.style.display = 'none'
         })
